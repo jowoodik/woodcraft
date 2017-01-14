@@ -7,23 +7,36 @@
 
 namespace app\assets;
 
+use yii\bootstrap\BootstrapAsset;
+use yii\web\YiiAsset;
 use yii\web\AssetBundle;
 
-/**
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @since 2.0
- */
 class AppAsset extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
-    public $css = [
-        'css/site.css',
-    ];
-    public $js = [
-    ];
-    public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
-    ];
+    public function init()
+    {
+        $this->basePath = '@webroot';
+        $this->baseUrl = '@web';
+
+        $this->css = [
+            'css/owl.carousel.css',
+            'css/owl.theme.css',
+            'css/owl.transitions.css',
+            'css/style.css',
+        ];
+
+        $this->js = [
+            'js/bootstrap.js',
+            'js/owl.carousel.js',
+            'js/owl.carousel.min.js',
+            'js/script.js',
+        ];
+
+        $this->depends = [
+            YiiAsset::className(),
+            BootstrapAsset::className(),
+        ];
+
+
+    }
 }
