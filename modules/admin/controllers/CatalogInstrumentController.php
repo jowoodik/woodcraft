@@ -2,16 +2,15 @@
 
 namespace app\modules\admin\controllers;
 
-use app\models\Route;
-use app\modules\admin\models\Catalog;
-use app\modules\admin\models\CatalogProizvodstvo;
 use Yii;
 use yii\helpers\Url;
 use yii\web\Controller;
+use app\models\Route;
+use app\modules\admin\models\CatalogInstrument;
 
-class CatalogProizvodstvoController extends Controller
+class CatalogInstrumentController extends Controller
 {
-    public $title = 'Каталог Производство';
+    public $title = 'Каталог Иснтрументов';
 
     public function actionIndex()
     {
@@ -30,7 +29,7 @@ class CatalogProizvodstvoController extends Controller
     {
         $req = Yii::$app->request;
 
-        $model = new CatalogProizvodstvo();
+        $model = new CatalogInstrument();
 
         if ($model->load($req->post())) {
             if ($model->save()) {
@@ -40,7 +39,7 @@ class CatalogProizvodstvoController extends Controller
                 Yii::warning($model->errors);
             }
         }
-        $this->view->params['breadcrumbs'][] = $this->view->title = 'Добавить каталог Производства';
+        $this->view->params['breadcrumbs'][] = $this->view->title = 'Добавить каталог Инструментов';
 
         return $this->render('create', [
             'model' => $model,
@@ -53,8 +52,8 @@ class CatalogProizvodstvoController extends Controller
 
         $req = Yii::$app->request;
 
-        /** @var $model Catalog */
-        $model = CatalogProizvodstvo::findOne($id);
+        /** @var $model CatalogInstrument */
+        $model = CatalogInstrument::findOne($id);
         if ($model->load($req->post())) {
             if ($model->save()) {
                 if ($req->post('btn-save-and-close')) {
@@ -65,7 +64,7 @@ class CatalogProizvodstvoController extends Controller
                 Yii::warning($model->errors);
             }
         }
-        $this->view->params['breadcrumbs'][] = $this->view->title = 'Редактировать каталог Производства';
+        $this->view->params['breadcrumbs'][] = $this->view->title = 'Редактировать каталог Инструментов';
 
         return $this->render('update', [
             'model' => $model,

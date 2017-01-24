@@ -2,13 +2,13 @@
 
 namespace app\modules\admin\controllers;
 
-use app\models\Route;
-use app\modules\admin\models\CatalogStroimaterialy;
 use Yii;
 use yii\helpers\Url;
 use yii\web\Controller;
+use app\models\Route;
+use app\modules\admin\models\CatalogWood;
 
-class CatalogStroimaterialyController extends Controller
+class CatalogWoodController extends Controller
 {
     public $title = 'Каталог Стройматериалов';
 
@@ -29,7 +29,7 @@ class CatalogStroimaterialyController extends Controller
     {
         $req = Yii::$app->request;
 
-        $model = new CatalogStroimaterialy();
+        $model = new CatalogWood();
 
         if ($model->load($req->post())) {
             if ($model->save()) {
@@ -39,7 +39,7 @@ class CatalogStroimaterialyController extends Controller
                 Yii::warning($model->errors);
             }
         }
-        $this->view->params['breadcrumbs'][] = $this->view->title = 'Добавить каталог Стройматериалов';
+        $this->view->params['breadcrumbs'][] = $this->view->title = 'Добавить каталог Деревообрабатывающего оборудования';
 
         return $this->render('create', [
             'model' => $model,
@@ -51,8 +51,8 @@ class CatalogStroimaterialyController extends Controller
         $this->view->title = $this->title;
 
         $req = Yii::$app->request;
-        /** @var $model CatalogStroimaterialy */
-        $model = CatalogStroimaterialy::findOne($id);
+        /** @var $model CatalogWood*/
+        $model = CatalogWood::findOne($id);
 //        dd($model);
         if ($model->load($req->post())) {
 //            $model->save();
@@ -65,7 +65,7 @@ class CatalogStroimaterialyController extends Controller
                 Yii::warning($model->errors);
             }
         }
-        $this->view->params['breadcrumbs'][] = $this->view->title = 'Редактировать каталог Стройматериалов';
+        $this->view->params['breadcrumbs'][] = $this->view->title = 'Редактировать каталог Деревообрабатывающего оборудования';
 
         return $this->render('update', [
             'model' => $model,

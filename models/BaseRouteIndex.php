@@ -10,7 +10,7 @@ use Yii;
  * @property integer $route_id
  * @property string $path
  * @property integer $level
- * @property string $refs
+ * @property integer $refs
  *
  * @property Route $route
  */
@@ -30,8 +30,7 @@ class BaseRouteIndex extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['level'], 'integer'],
-            [['refs'], 'string'],
+            [['level', 'refs'], 'integer'],
             [['path'], 'string', 'max' => 255],
             [['route_id'], 'exist', 'skipOnError' => true, 'targetClass' => Route::className(), 'targetAttribute' => ['route_id' => 'id']],
         ];

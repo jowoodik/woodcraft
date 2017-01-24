@@ -16,16 +16,18 @@ use Yii;
  * @property string $meta_title
  * @property string $meta_description
  * @property string $meta_keywords
- * @property boolean $is_active
+ * @property integer $is_active
  * @property integer $sort
  * @property integer $created_at
  * @property integer $updated_at
  *
  * @property EntityCatalog[] $entityCatalogs
  * @property EntityCatalogCategories[] $entityCatalogCategories
+ * @property EntityCatalogInstrument[] $entityCatalogInstruments
+ * @property EntityCatalogWood[] $entityCatalogWoods
  * @property EntityGallery[] $entityGalleries
  * @property EntityPage[] $entityPages
- * @property EntityVacancy[] $entityVacancies
+ * @property EntityServices[] $entityServices
  * @property Menu[] $menus
  * @property Route $parent
  * @property Route[] $routes
@@ -47,9 +49,8 @@ class BaseRoute extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parent_id', 'entity', 'entity_id', 'sort', 'created_at', 'updated_at'], 'integer'],
+            [['parent_id', 'entity', 'entity_id', 'is_active', 'sort', 'created_at', 'updated_at'], 'integer'],
             [['meta_description', 'meta_keywords'], 'string'],
-            [['is_active'], 'boolean'],
             [['title', 'alias', 'meta_title'], 'string', 'max' => 255],
             [['parent_id'], 'exist', 'skipOnError' => true, 'targetClass' => Route::className(), 'targetAttribute' => ['parent_id' => 'id']],
         ];
@@ -96,6 +97,22 @@ class BaseRoute extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+    public function getEntityCatalogInstruments()
+    {
+        return $this->hasMany(EntityCatalogInstrument::className(), ['route_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEntityCatalogWoods()
+    {
+        return $this->hasMany(EntityCatalogWood::className(), ['route_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getEntityGalleries()
     {
         return $this->hasMany(EntityGallery::className(), ['route_id' => 'id']);
@@ -112,9 +129,9 @@ class BaseRoute extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getEntityVacancies()
+    public function getEntityServices()
     {
-        return $this->hasMany(EntityVacancy::className(), ['route_id' => 'id']);
+        return $this->hasMany(EntityServices::className(), ['route_id' => 'id']);
     }
 
     /**

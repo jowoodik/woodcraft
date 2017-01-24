@@ -13,6 +13,9 @@ use Yii;
  * @property string $short_text
  * @property string $text
  * @property string $image
+ * @property string $meta_title
+ * @property string $meta_description
+ * @property string $meta_keywords
  * @property integer $created_at
  * @property integer $updated_at
  * @property integer $status
@@ -35,7 +38,7 @@ class BaseNews extends \yii\db\ActiveRecord
         return [
             [['short_text', 'text'], 'string'],
             [['created_at', 'updated_at', 'status'], 'integer'],
-            [['title', 'alias', 'image'], 'string', 'max' => 255],
+            [['title', 'alias', 'image', 'meta_title', 'meta_description', 'meta_keywords'], 'string', 'max' => 255],
         ];
     }
 
@@ -51,6 +54,9 @@ class BaseNews extends \yii\db\ActiveRecord
             'short_text' => 'Short Text',
             'text' => 'Text',
             'image' => 'Image',
+            'meta_title' => 'Meta Title',
+            'meta_description' => 'Meta Description',
+            'meta_keywords' => 'Meta Keywords',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'status' => 'Status',

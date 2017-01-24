@@ -133,9 +133,9 @@ foreach ($menus as $menu) {
         </div>
     </nav>
 
-    <?php if ($is_main): ?>
+<!--    --><?php //if ($is_main): ?>
         <?= $this->render('_slider') ?>
-    <?php endif ?>
+<!--    --><?php //endif ?>
 
     <div class="middle-navigation">
         <div class="container">

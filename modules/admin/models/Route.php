@@ -129,7 +129,7 @@ SELECT
   CASE WHEN parent_id IS NULL THEN
     '#'
   ELSE
-    parent_id    
+    parent_id::VARCHAR    
   END AS "parent",
   title AS "text",
   entity AS "type",

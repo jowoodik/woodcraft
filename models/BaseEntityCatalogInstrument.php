@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "{{%entity_catalog_stroimaterialy}}".
+ * This is the model class for table "{{%entity_catalog_instrument}}".
  *
  * @property integer $id
  * @property integer $route_id
@@ -13,14 +13,14 @@ use Yii;
  *
  * @property Route $route
  */
-class BaseEntityCatalogStroimaterialy extends \yii\db\ActiveRecord
+class BaseEntityCatalogInstrument extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return '{{%entity_catalog_stroimaterialy}}';
+        return '{{%entity_catalog_instrument}}';
     }
 
     /**

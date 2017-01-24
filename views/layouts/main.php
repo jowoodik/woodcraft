@@ -44,9 +44,6 @@ $bodyClass = ArrayHelper::getValue($this, 'params.bodyClass');
         <div id="content" class="content">
 
             <div class="container">
-                <?= Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                ]) ?>
                 <?= $content ?>
             </div>
         </div>

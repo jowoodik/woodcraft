@@ -69,7 +69,7 @@ class SliderController extends Controller
                 $file->saveAs($dir . '/' . $string . '.jpg');
             }
             if ($model->save()) {
-                return $this->redirect(['update', 'id' => $model->id]);
+                return $this->goBack();
             } else {
                 Yii::warning($model->errors);
             }
@@ -114,7 +114,7 @@ class SliderController extends Controller
                 $file->saveAs($dir . '/' . $string . '.jpg');
             }
             if ($model->save()) {
-                return $this->redirect(['update', 'id' => $model->id]);
+                return $this->goBack();
             } else {
                 Yii::warning($model->errors);
             }

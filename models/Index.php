@@ -37,7 +37,6 @@ WITH RECURSIVE r AS (
     route
   JOIN r ON route.parent_id = r."id"
 ) 
--- SELECT * FROM r
 INSERT INTO route_index ("route_id", "path", "refs", "level") (
   SELECT
     "id",
@@ -49,7 +48,7 @@ INSERT INTO route_index ("route_id", "path", "refs", "level") (
 UPDATE SET 
   "path" = EXCLUDED."path",
   "level" = EXCLUDED."level",
-  "refs" = EXCLUDED."refs"
+  "refs" = EXCLUDED."refs";
 SQL;
 
         $cmd = Yii::$app->db->createCommand($sql);

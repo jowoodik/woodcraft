@@ -4,6 +4,7 @@ use app\widgets\popup\MagnificPopup;
 ?>
 <div class="block-image pull-left">
     <?php
+    /** @var \app\models\EntityCatalogCategories $model */
     if (str_word_count($model['page']['image']) != 0) { ?>
         <div id="mpup">
             <a href="/<?= $model['page']['image'] . '.jpg' ?>" class="item">

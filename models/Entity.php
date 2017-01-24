@@ -12,8 +12,8 @@ class Entity
 {
     const ENTITY_PAGE = 1;
     const ENTITY_GALLERY = 2;
-    const ENTITY_CATALOG_PROIZVODSTVO = 3;
-    const ENTITY_CATALOG_STROIMATERIALY = 4;
+    const ENTITY_CATALOG_INSTRUMENT = 3;
+    const ENTITY_CATALOG_WOOD = 4;
     const ENTITY_CATALOG_CATEGORIES = 5;
     const ENTITY_REQUEST = 6;
     const ENTITY_SERVICES = 7;
@@ -33,16 +33,16 @@ class Entity
                 'controller' => 'gallery',
                 'icon'       => 'fa fa-camera-retro',
             ],
-            self::ENTITY_CATALOG_PROIZVODSTVO   => [
-                'class'      => EntityCatalogProizvodstvo::className(),
-                'name'       => 'Каталог Производство',
-                'controller' => 'catalog-proizvodstvo',
+            self::ENTITY_CATALOG_INSTRUMENT   => [
+                'class'      => EntityCatalogInstrument::className(),
+                'name'       => 'Каталог Инструментов',
+                'controller' => 'catalog-instrument',
                 'icon'       => 'fa fa-building',
             ],
-            self::ENTITY_CATALOG_STROIMATERIALY => [
-                'class'      => EntityCatalogStroimaterialy::className(),
-                'name'       => 'Каталог Стройматериалы',
-                'controller' => 'catalog-stroimaterialy',
+            self::ENTITY_CATALOG_WOOD => [
+                'class'      => EntityCatalogWood::className(),
+                'name'       => 'Деревообрабатывающее оборудование',
+                'controller' => 'catalog-wood',
                 'icon'       => 'fa fa-building',
             ],
             self::ENTITY_CATALOG_CATEGORIES     => [
@@ -144,11 +144,11 @@ class Entity
     public static function getEntityCreateUrlList()
     {
         $items = [];
+
         foreach (self::getEntityData() as $entity => $data) {
+
             $url = self::getEntityCreateUrl($entity);
-            if ($data['name'] == 'Страница' OR $data['name'] == 'Страница продукции') {
-                $items[] = ['label' => $data['name'], 'url' => $url];
-            }
+            $items[] = ['label' => $data['name'], 'url' => $url];
         }
 
         return $items;

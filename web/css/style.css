@@ -271,7 +271,6 @@ table p{
     background: url('../images/slider.png') no-repeat center center;
     background-size: cover;
     height:100%;
-    padding-top: 10px;
 }
 .slider-wrapper .title{
     font-family:Roboto-Black;
@@ -282,7 +281,7 @@ table p{
 #owl-mp-slider .item .owl-img {
     display: block;
     width: 100%;
-    height: 200px;
+    height: 400px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

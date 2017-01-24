@@ -1,4 +1,4 @@
-<?php
+1<?php
 /**
  * @var $this yii\web\View
  * @var \app\models\EntityCatalogCategories $model

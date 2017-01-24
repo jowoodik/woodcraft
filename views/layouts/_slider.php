@@ -21,7 +21,6 @@ $slides = Slider::find()->asArray()->where(['status' => 1])->orderBy('sort')->al
 
 ?>
 <div class="slider-wrapper">
-    <div class="container">
         <div class="row">
             <?php foreach (ArrayHelper::getValue($settingsArr, 'slider_title', []) as $info_block) { ?>
                 <div class="title text-uppercase">
@@ -33,15 +32,9 @@ $slides = Slider::find()->asArray()->where(['status' => 1])->orderBy('sort')->al
                     <div class="item">
                         <a href="<?= $slide['link'] ?>">
                             <div  class="owl-img" style="background-image: url(<?= $slide['image'] . '.jpg' ?>)" > </div>
-                            <div class="gradient text-uppercase">
-                                <div>
-                                    <?= $slide['text'] ?>
-                                </div>
-                            </div>
                         </a>
                     </div>
                 <?php endforeach ?>
             </div>
         </div>
-    </div>
 </div>

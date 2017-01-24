@@ -12,7 +12,7 @@ use Yii;
  * @property string $name
  * @property string $position
  * @property integer $sort
- * @property boolean $is_active
+ * @property integer $is_active
  *
  * @property Route $route
  */
@@ -32,8 +32,7 @@ class BaseMenu extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['route_id', 'sort'], 'integer'],
-            [['is_active'], 'boolean'],
+            [['route_id', 'sort', 'is_active'], 'integer'],
             [['name', 'position'], 'string', 'max' => 255],
             [['route_id'], 'exist', 'skipOnError' => true, 'targetClass' => Route::className(), 'targetAttribute' => ['route_id' => 'id']],
         ];

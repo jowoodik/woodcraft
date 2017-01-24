@@ -18,7 +18,7 @@ class m160504_000002_create_route_index extends Migration
             'route_id' => $this->primaryKey(),
             'path' => $this->string(),
             'level' => $this->smallInteger(),
-            'refs' => 'int',
+            'refs' => 'int[1]',
         ]);
 
         $this->addForeignKey(self::$table . '_route_id_fk', self::$table, 'route_id',
