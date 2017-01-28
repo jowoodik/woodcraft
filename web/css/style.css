@@ -42,9 +42,6 @@ body {
     outline: none;
     box-shadow: none !important;
 }
-body a {
-    color: #252424 !important;
-}
 h1{
     font-family:Roboto-Regular;
     font-size: 24px;
@@ -134,6 +131,13 @@ h4{
 a:active,
 a:focus {
     outline: none !important; }
+a:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+a{
+    color: #ffffff;
+}
 td {
     padding: 5px;
 }
@@ -154,6 +158,15 @@ table p{
     margin-bottom: 0;
     border-radius: 0;
 }
+ul.breadcrumb {
+    background: #8d6b46 url("/images/zenbg.png");
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+.breadcrumb > .active {
+    color: #66cc66;
+}
+
 .header .top-navigation {
     background-color: rgba(255, 255, 255, 1) !important;
     margin-bottom: 0 !important;
@@ -240,7 +253,7 @@ table p{
 .middle-navigation {
     font-family: Roboto-Bold;
     border:none;
-    background: url('../images/middle-menu.png') repeat-x;
+    background: #8d6b46 url("/images/zenbg.png");
     min-height: 40px;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.35);
 }
@@ -253,18 +266,23 @@ table p{
 .middle-navigation .navbar-center .nav {
     display: inline-block;
     float: none;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 .middle-navigation .navbar-nav > li > a {
-    border-right: 1px solid #b15e1b;
     padding: 10px 20px;
     text-transform: uppercase;
 }
-.middle-navigation .navbar-nav > li > a:hover,
-.middle-navigation .navbar-nav > li > a:active{
-    color: #ffffff !important;
+.middle-navigation .navbar-nav > li:hover,
+.middle-navigation .navbar-nav > li.active{
+    color: #66cc66;
+    -webkit-box-shadow: inset 0 0 1px 2px rgba(102,204,102,0.8);
+    -moz-box-shadow: inset 0 0 1px 2px rgba(102,204,102,0.8);
+    box-shadow: inset 0 0 1px 2px rgba(102,204,102,0.8);
 }
-.middle-navigation .navbar-nav > li:first-child {
-    border-left: 1px solid #b15e1b;
+.middle-navigation .navbar-nav > li:hover a,
+.middle-navigation .navbar-nav > li.active a {
+    color: #66cc66;
 }
 
 .slider-wrapper {
@@ -317,6 +335,69 @@ table p{
     margin-top: -50px;
     padding-bottom: 25px;
     text-align: center;
+}
+
+.sidebar {
+    display: table;
+    width: 100%;
+    background: #8d6b46 url("/images/zenbg.png");
+    padding: 10px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.sidebar .block-title {
+    font-size: 24px;
+    padding: 0;
+    color: #fff;
+
+}
+.sidebar .block-hr {
+    margin: 0;
+}
+.sidebar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    line-height: 16px;
+}
+.sidebar-menu-item {
+    position: relative;
+    padding: 8px 10px;
+    border-bottom: 1px dotted #ffffff;
+    border-top: 1px dotted #ffffff;
+}
+.sidebar-menu-item:first-child {
+    border-top: none;
+}
+.sidebar-menu-item:last-child {
+    border: none;
+}
+.sidebar-menu-item a {
+    color: #ffffff;
+}
+.sidebar-menu-item .st_menu_open {
+    display: none;
+    font-size: 10px;
+    position: absolute;
+    top:50%;
+    right:10px;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: bold;
+    padding: 2px 6px;
+}
+.sidebar-menu-item:hover {
+    cursor: pointer;
+}
+.sidebar-menu-item:hover a {
+    color: #66cc66;
+}
+.sidebar-menu-item:hover .st_menu_open {
+    display: block;
 }
 
 #footer{

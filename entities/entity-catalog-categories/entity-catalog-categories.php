@@ -1,4 +1,4 @@
-1<?php
+<?php
 /**
  * @var $this yii\web\View
  * @var \app\models\EntityCatalogCategories $model
@@ -9,7 +9,7 @@ use app\models\Route;
 use app\widgets\popup\MagnificPopup;
 use app\widgets\SideBar\SideBar;
 use yii\helpers\ArrayHelper;
-
+use yii\widgets\Breadcrumbs;
 
 $this->params['breadcrumbs'] = $model->breadcrumbs;
 $this->title = $model['route']['title'];
@@ -36,12 +36,16 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => strip_tags($model['ro
 <div class="row">
     <div class="catalog-page">
         <?php
-        if ($model['page']['is_sidebar']) {
-            echo $this->render('/layouts/_sidebar', ['model' => $model]);
-            $col = 9;
-        }
+        echo SideBar::widget([
+            'id' => $model['route']['id'],
+            'parent_id' => $model['route']['parent_id']
+        ]);
+        $col=9;
         ?>
         <div class="page-sidebar col-md-<?= isset($col) ? 9 : 12 ?> col-xs-12">
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
             <div class="title">
                 <?= $model['route']['title'] ?>
             </div>

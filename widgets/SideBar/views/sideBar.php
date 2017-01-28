@@ -3,10 +3,10 @@
  * @var \app\widgets\SideBar\SideBar $model
  */
 
-use app\models\News;
-use yii\helpers\Url;
+use app\models\Route;
+use yii\helpers\Html;
 
-if (isset($model->parent_id)) {
+if (isset($model->parent_id)){
     $condition = 'parent_id';
     $id = $model->id;
 } else {
@@ -14,31 +14,31 @@ if (isset($model->parent_id)) {
     $id = 1;
 }
 
-$newses = News::find()
+$routes = Route::find()
     ->asArray()
-    ->andWhere(['status' => 1])
-    ->limit(2)
-    ->orderBy('created_at DESC')
+    ->select([
+        'route.*',
+        'route_index.*'
+    ])
+    ->where([$condition => $id])
+    ->andWhere(['entity' => 5])
+    ->innerJoin('route_index', 'route_index.route_id = route.id')
     ->all();
-?>
 
-<div class="col-md-3 col-xs-12 news">
-    <div class="title text-uppercase">Новости</div>
-    <?php foreach ($newses as $news) : ?>
-        <div class="news-item">
-            <a href="<?= Url::to(['/news/view/', 'id' => $news['id'], 'alias' => $news['alias']]) ?>">
-                <?php if (str_word_count($news['image'])) { ?>
-                    <img src="<?= '/' . $news['image'] . '-preview.jpg' ?>" class="img-responsive" alt="">
-                <?php } else { ?>
-                    <img src="/uploads/no-image.jpg" class="img-responsive"/>
-                <?php } ?>
-            </a>
-            <div class="date"><?= date('d.m.Y', $news['created_at']) ?></div>
-            <div class="desc"><?= $news['short_text'] ?>
-            </div>
-            <a href="<?= Url::to(['/news/view/', 'id' => $news['id'], 'alias' => $news['alias']]) ?>"
-               class="btn btn-yellow more">Подробнее</a>
-        </div>
-    <?php endforeach; ?>
-    <a href="/news" class="redirect text-uppercase">Перейти к другим новостям</a>
+?>
+<div class="col-md-3 col-xs-12">
+    <div class="sidebar">
+        <p class="block-title"><a href="">Каталог продукции</a></p>
+        <hr class="block-hr">
+        <ul class="sidebar-menu">
+            <?php foreach ($routes as $route) :?>
+                <li class="sidebar-menu-item">
+                    <a href="<?= $route['path'] ?>"><?= $route['title']?>
+                        <span class="st_menu_open"><span class="glyphicon glyphicon-chevron-right"></span></span>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
 </div>
+

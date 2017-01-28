@@ -31,7 +31,7 @@ $slides = Slider::find()->asArray()->where(['status' => 1])->orderBy('sort')->al
                 <?php foreach ($slides as $slide): ?>
                     <div class="item">
                         <a href="<?= $slide['link'] ?>">
-                            <div  class="owl-img" style="background-image: url(<?= $slide['image'] . '.jpg' ?>)" > </div>
+                            <div  class="owl-img" style="background-image: url(<?= '/' . $slide['image'] . '.jpg' ?>)" > </div>
                         </a>
                     </div>
                 <?php endforeach ?>
