@@ -2,27 +2,45 @@
 
 namespace app\widgets\SideBar;
 
-use app\widgets\SideBar\SideBarAsset;
 use yii\base\Widget;
-use yii\helpers\Url;
+use app\models\Route;
 
-/**
- * Created by PhpStorm.
- * User: alex
- * Date: 04.05.16
- * Time: 14:20
- */
 class SideBar extends Widget
 {
     public $form;
     public $model;
     public $id;
     public $parent_id;
+    public $routes;
+
+    public function init()
+    {
+        if (isset($this->model->parent_id)){
+            $condition = 'parent_id';
+            $id = $this->model->id;
+        } else {
+            $condition = 'level';
+            $id = 1;
+        }
+
+        $this->routes = Route::find()
+            ->asArray()
+            ->select([
+                'route.*',
+                'route_index.*'
+            ])
+            ->where([$condition => $id])
+            ->andWhere(['entity' => 5])
+            ->innerJoin('route_index', 'route_index.route_id = route.id')
+            ->all();
+
+
+    }
 
     public function run()
     {
         return $this->render('sideBar', [
-            'model' => $this
+            'routes' => $this->routes
         ]);
     }
 }

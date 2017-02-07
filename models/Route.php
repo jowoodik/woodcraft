@@ -6,7 +6,12 @@ namespace app\models;
 use app\components\App;
 use yii\behaviors\TimestampBehavior;
 
-class Route extends BaseRoute
+/**
+ * This is the model class for table "{{%route}}".
+ *
+ * @property EntityCatalogCategories $entityCatalogCategories
+ */
+class Route extends \app\modules\admin\models\Route
 {
     public function behaviors()
     {
@@ -28,6 +33,7 @@ class Route extends BaseRoute
             ->asArray()
             ->select([
                 'route.*',
+                'route_index.path AS path',
                 'route_index.path AS path',
             ])
             ->orderBy('[[parent_id]] ASC NULLS FIRST, [[id]] ASC')
@@ -81,5 +87,22 @@ class Route extends BaseRoute
         array_pop($breadCrumbs);
 
         return array_merge($breadCrumbs, $end);
+    }
+
+    public function getChildRoutes()
+    {
+        return Route::find()
+            ->asArray()
+            ->select([
+                'route.id',
+                'route.title',
+                'route.parent_id AS parent',
+                'route_index.path AS path',
+                'level'
+            ])
+            ->from('route')
+            ->innerJoin('route_index', 'route_index.route_id = route.id')
+            ->andWhere(['<', 'level', 3])
+            ->all();
     }
 }

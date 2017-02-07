@@ -7,9 +7,10 @@ use app\widgets\popup\MagnificPopup;
     /** @var \app\models\EntityCatalogCategories $model */
     if (str_word_count($model['page']['image']) != 0) { ?>
         <div id="mpup">
-            <a href="/<?= $model['page']['image'] . '.jpg' ?>" class="item">
-                <img src="/<?= $model['page']['image'] . '.jpg' ?>"
-                     class="product-image img-responsive"/>
+            <a href="/<?= $model['page']['image'] . '.jpg' ?>">
+                <div class="img-wrapper">
+                    <img src="/<?= $model['page']['image'] . '.jpg' ?>" class="product-image img-responsive"/>
+                </div>
             </a>
         </div>
         <?php echo MagnificPopup::widget(

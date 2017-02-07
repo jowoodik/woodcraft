@@ -4,6 +4,7 @@ $(document).ready(function () {
         autoPlay: 3000, //Set AutoPlay to 3 seconds
         stopOnHover: true,
         navigation: true,
+        singleItem: true,
         navigationText: [
             "<img src='images/left-arrow.png'>",
             "<img src='images/right-arrow.png'>"
@@ -18,14 +19,17 @@ $(document).ready(function () {
 
     });
 
+
 });
 
 function footerToBottom() {
     var browserHeight = $(window).height(),
         footerOuterHeight = $('#footer').outerHeight(true),
+        headerOuterHeight = $('#header').outerHeight(true),
         mainHeightMarginPaddingBorder = $('#content').outerHeight(true) - $('#content').height();
+    console.log(footerOuterHeight);
     $('#content').css({
-        'min-height': browserHeight - footerOuterHeight - mainHeightMarginPaddingBorder,
+        'min-height': browserHeight - footerOuterHeight - headerOuterHeight,
     });
 }
 footerToBottom();

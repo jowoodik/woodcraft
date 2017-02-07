@@ -18,8 +18,7 @@ echo $form->field($that->model, 'parent_id')
     ->dropDownList(Route::getPidList([
         Entity::ENTITY_PAGE,
         Entity::ENTITY_GALLERY,
-        Entity::ENTITY_CATALOG_INSTRUMENT,
-        Entity::ENTITY_CATALOG_WOOD,
+        Entity::ENTITY_CATALOG,
         Entity::ENTITY_CATALOG_CATEGORIES,
         Entity::ENTITY_SERVICES
     ], $that->model['route_id']), [

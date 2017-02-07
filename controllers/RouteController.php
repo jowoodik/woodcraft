@@ -12,6 +12,7 @@ namespace app\controllers;
 use app\components\App;
 use app\models\Entity;
 use app\models\Route;
+use yii\db\ActiveQuery;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
@@ -35,5 +36,26 @@ class RouteController extends Controller
         $model->attach();
 
         return $model->action($this);
+    }
+
+    public function actionGetSubLevels()
+    {
+        $req = \Yii::$app->request->post();
+        $parentId = $req['parentId'];
+        $parentPath = $req['parentPath'];
+        $parentName = $req['parentName'];
+
+        $subRoutes = Route::find()
+            ->joinWith(['routeIndex'])
+            ->andWhere(['parent_id'=>$parentId])
+            ->all();
+
+        $html = $this->renderPartial('index',[
+            'routes' => $subRoutes,
+            'parentPath' => $parentPath,
+            'parentName' => $parentName,
+        ]);
+
+        return $html;
     }
 }

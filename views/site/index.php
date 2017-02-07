@@ -33,8 +33,7 @@ foreach (ArrayHelper::getValue($settingsArr, 'meta_keywords', []) as $info_block
 
 <div class="container">
     <div class="row">
-        <?php echo SideBar::widget([
-        ]); ?>
+        <?php echo SideBar::widget([]); ?>
         <div class="col-md-9 col-xs-12 content-wrapper">
             <div class="about">
                 <?php foreach (ArrayHelper::getValue($settingsArr, 'about_title', []) as $info_block) { ?>

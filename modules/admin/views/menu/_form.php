@@ -28,7 +28,7 @@ echo $form->field($model, 'route_id')->dropDownList(
         ])
         ->where(['not', ['id' => $model->id]])
         ->andWhere([
-            'entity' => [Entity::ENTITY_PAGE, Entity::ENTITY_GALLERY, Entity::ENTITY_CATALOG_INSTRUMENT,Entity::ENTITY_CATALOG_WOOD, Entity::ENTITY_REQUEST, Entity::ENTITY_SERVICES],
+            'entity' => [Entity::ENTITY_PAGE, Entity::ENTITY_GALLERY, Entity::ENTITY_CATALOG, Entity::ENTITY_REQUEST, Entity::ENTITY_SERVICES],
         ])
         ->orderBy(['id' => SORT_ASC])
         ->indexBy('id')

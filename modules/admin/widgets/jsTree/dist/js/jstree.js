@@ -603,7 +603,7 @@
 				.on("click.jstree", ".jstree-ocl", $.proxy(function (e) {
 						this.toggle_node(e.target);
 					}, this))
-				.on("dblclick.jstree", ".jstree-anchor", $.proxy(function (e) {
+				.on("click.jstree", ".jstree-anchor", $.proxy(function (e) {
 						if(e.target.tagName && e.target.tagName.toLowerCase() === "input") { return true; }
 						if(this.settings.core.dblclick_toggle) {
 							this.toggle_node(e.target);

@@ -40,7 +40,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => strip_tags($model['ro
             'id' => $model['route']['id'],
             'parent_id' => $model['route']['parent_id']
         ]);
-        $col=9;
+        $col = 9;
         ?>
         <div class="page-sidebar col-md-<?= isset($col) ? 9 : 12 ?> col-xs-12">
             <?= Breadcrumbs::widget([
@@ -49,11 +49,8 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => strip_tags($model['ro
             <div class="title">
                 <?= $model['route']['title'] ?>
             </div>
-            <div class="row">
                 <?php if (isset($routes) && !empty($routes)) { ?>
                 <?php foreach ($routes as $i => $route) : ?>
-                <?php if ($i && !($i % 3)): ?></div>
-            <div class="row"><?php endif; ?>
                 <?= $this->render('product-list', ['route' => $route]); ?>
                 <?php endforeach; ?>
                 <?php } else { ?>
@@ -61,8 +58,8 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => strip_tags($model['ro
                     <div class="block-text">
                         <?= $model['page']['text'] ?>
                     </div>
-
                 <?php } ?>
             </div>
         </div>
     </div>
+</div>

@@ -39,29 +39,17 @@ foreach ($menus as $menu) {
     <div class="container">
         <div class="row">
             <div class="col-md-3 logo visible-md visible-lg">
-                <a href="#"><img src="/images/footer-logo.png" alt=""></a>
-                <div class="ooo">ООО “Завод-строй модуль” <?=date("Y");?>г</div>
+                <div class="logo">
+                    <a href="/"><img src="/images/logo2.png" alt=""></a>
+                </div>
+                <div class="ooo">ООО “Woodcraft” <?=date("Y");?>г</div>
             </div>
-            <div class="col-md-2 col-sm-4 col-xs-12 text-uppercase footer-menu">
+            <div class="col-md-5 col-sm-4 col-xs-12 text-uppercase footer-menu">
                 <a href="/#about">О Нас</a>
                 <?php foreach (ArrayHelper::getValue($menusArr, 'footer_menu', []) as $mItem) { ?>
                         <a href="<?= Url::to($mItem['path']) ?>"><?= $mItem['route']['title']; ?></a>
                 <?php } ?>
                     <a href="/#useful">Полезная информация</a>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-12 contact">
-                <div>
-                    <?php foreach (ArrayHelper::getValue($settingsArr, 'contacts_header', []) as $info_block) { ?>
-                        <div>
-                            <?= strip_tags($info_block['info_text']) ?>
-                        </div>
-                    <?php } ?>
-                    <?php foreach (ArrayHelper::getValue($settingsArr, 'email_footer', []) as $info_block) { ?>
-                        <div>
-                            <?= strip_tags($info_block['info_text']) ?>
-                        </div>
-                    <?php } ?>
-                </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12 icons">
                 <div>
@@ -76,9 +64,6 @@ foreach ($menus as $menu) {
                         </div>
                     <?php } ?>
                 </div>
-            </div>
-            <div class="footer-building">
-                <img src="/images/footer-building.png" class="img-responsive" alt="">
             </div>
         </div>
     </div>

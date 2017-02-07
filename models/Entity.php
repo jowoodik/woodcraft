@@ -17,6 +17,7 @@ class Entity
     const ENTITY_CATALOG_CATEGORIES = 5;
     const ENTITY_REQUEST = 6;
     const ENTITY_SERVICES = 7;
+    const ENTITY_CATALOG = 8;
 
     public static function getEntityData($entity = null)
     {
@@ -33,16 +34,10 @@ class Entity
                 'controller' => 'gallery',
                 'icon'       => 'fa fa-camera-retro',
             ],
-            self::ENTITY_CATALOG_INSTRUMENT   => [
-                'class'      => EntityCatalogInstrument::className(),
-                'name'       => 'Каталог Инструментов',
-                'controller' => 'catalog-instrument',
-                'icon'       => 'fa fa-building',
-            ],
-            self::ENTITY_CATALOG_WOOD => [
-                'class'      => EntityCatalogWood::className(),
-                'name'       => 'Деревообрабатывающее оборудование',
-                'controller' => 'catalog-wood',
+            self::ENTITY_CATALOG   => [
+                'class'      => EntityCatalog::className(),
+                'name'       => 'Каталог',
+                'controller' => 'catalog',
                 'icon'       => 'fa fa-building',
             ],
             self::ENTITY_CATALOG_CATEGORIES     => [

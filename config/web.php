@@ -65,6 +65,7 @@ $config = [
                 '<_c:(search|news|elfinder)>' => '<_c>/index',
                 '<_c:(news)>/<id:\d+>-<alias>' => '<_c>/view',
                 '<_c:(request)>' => '<_c>/index',
+                '<_c:(route)>/<_a:(get-sub-levels)>' => '<_c>/<_a>',
                 '<_m:(admin)>/<_c>/<_a>' => '<_m>/<_c>/<_a>',
                 '<_m:(admin)>/<_c>' => '<_m>/<_c>/index',
                 '<_m:(admin)>' => '<_m>/default/index',
