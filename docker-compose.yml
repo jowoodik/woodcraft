@@ -4,7 +4,7 @@ services:
   nginx:
     image: nginx
     volumes:
-      - .:/home
+      - ./:/home/
       - ./docker/nginx:/etc/nginx/conf.d
     ports:
       - 80:80
@@ -21,4 +21,4 @@ services:
   postgres:
     image: postgres:9.5
     volumes:
-      - .:/home
+      - ./:/home/
