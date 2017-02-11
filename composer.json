@@ -30,7 +30,7 @@
         "mihaildev/yii2-elfinder": "*",
         "bower-asset/magnific-popup": "*",
         "bower-asset/tinymce-dist": "*",
-        "almasaeed2010/adminlte": "~2.0",
+        "almasaeed2010/adminlte": "*",
         "fortawesome/font-awesome": "*",
         "leandrogehlen/yii2-treegrid": "*",
         "kartik-v/yii2-widget-depdrop": "@dev",
