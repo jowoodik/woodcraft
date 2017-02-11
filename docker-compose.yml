@@ -6,6 +6,8 @@ services:
     volumes:
       - .:/app
       - ./docker/nginx:/etc/nginx/conf.d
+      ports:
+       - 80:80
   php:
     build: ./docker/php7.0
     expose:
