@@ -1,0 +1,1 @@
+INSERT INTO public.entity_catalog (id, route_id, name) VALUES (1, 12, null);

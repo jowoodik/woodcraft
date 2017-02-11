@@ -1,0 +1,1 @@
+INSERT INTO public.menu (id, route_id, name, position, sort, is_active) VALUES (6, 12, null, 'middle_menu', 1, true);
