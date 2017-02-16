@@ -31,6 +31,7 @@ class SideBar extends Widget
             ])
             ->where([$condition => $id])
             ->andWhere(['entity' => 5])
+            ->andWhere(['!=','parent_id', 15])
             ->innerJoin('route_index', 'route_index.route_id = route.id')
             ->all();
 

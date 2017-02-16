@@ -16,7 +16,7 @@ use Yii;
  * @property string $meta_title
  * @property string $meta_description
  * @property string $meta_keywords
- * @property integer $is_active
+ * @property boolean $is_active
  * @property integer $sort
  * @property integer $created_at
  * @property integer $updated_at
@@ -49,8 +49,9 @@ class BaseRoute extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parent_id', 'entity', 'entity_id', 'is_active', 'sort', 'created_at', 'updated_at'], 'integer'],
+            [['parent_id', 'entity', 'entity_id', 'sort', 'created_at', 'updated_at'], 'integer'],
             [['meta_description', 'meta_keywords'], 'string'],
+            [['is_active'], 'boolean'],
             [['title', 'alias', 'meta_title'], 'string', 'max' => 255],
             [['parent_id'], 'exist', 'skipOnError' => true, 'targetClass' => Route::className(), 'targetAttribute' => ['parent_id' => 'id']],
         ];

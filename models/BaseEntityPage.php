@@ -12,7 +12,7 @@ use Yii;
  * @property string $text
  * @property integer $created_at
  * @property integer $updated_at
- * @property integer $is_sidebar
+ * @property boolean $is_sidebar
  *
  * @property Route $route
  */
@@ -32,8 +32,9 @@ class BaseEntityPage extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['route_id', 'created_at', 'updated_at', 'is_sidebar'], 'integer'],
+            [['route_id', 'created_at', 'updated_at'], 'integer'],
             [['text'], 'string'],
+            [['is_sidebar'], 'boolean'],
             [['route_id'], 'exist', 'skipOnError' => true, 'targetClass' => Route::className(), 'targetAttribute' => ['route_id' => 'id']],
         ];
     }

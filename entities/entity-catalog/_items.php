@@ -31,8 +31,8 @@ $routes = Route::find()
 
 <?php if (isset($routes) && !empty($routes)) : ?>
     <?php foreach ($routes as $route) : ?>
-        <div class="col-md-4 col-sm-6 item">
-
+        <div class="col-md-4 col-sm-6">
+<div class="item">
             <?php if (!empty($route['image'])) { ?>
                 <a class="block" href="<?= $route['path'] ?>">
                     <?= $route['title'] ?>
@@ -47,6 +47,7 @@ $routes = Route::find()
                     <img src="/uploads/no-image.jpg" class="my-thumb"/>
                 </a>
             <?php } ?>
+        </div>
         </div>
     <?php endforeach; ?>
 <?php endif; ?>

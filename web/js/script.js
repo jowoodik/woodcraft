@@ -19,7 +19,34 @@ $(document).ready(function () {
 
     });
 
+    $('.service-title').on('click', function (e) {
+        e.preventDefault();
 
+        var target = e.target;
+        var parent = $(target).parents('.wrapper-service');
+        var text = $(parent).find('.text');
+
+        if (!$(parent).hasClass('active')) {
+            $(parent).addClass('active');
+            $(target).addClass('active');
+            $(text).removeClass('hidden');
+        } else {
+            $(parent).removeClass('active');
+            $(target).removeClass('active');
+            $(text).addClass('hidden');
+        }
+    });
+
+    $('#make-order').on('click', function (e) {
+         var name = $(this).data('name');
+         var price = $(this).data('price');
+
+        var modal = $('#orderModal');
+        $(modal).find('.name').html('«' + name + '»');
+        $(modal).find('.price').html(price + ' руб.');
+        $(modal).find('#applications-outer_length').val(price);
+        $(modal).find('#applications-file_route').val(name);
+    });
 });
 
 function footerToBottom() {

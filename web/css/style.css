@@ -43,11 +43,10 @@ body {
     box-shadow: none !important;
 }
 h1{
-    font-family:Roboto-Regular;
-    font-size: 24px;
-    padding-bottom:20px;
-    text-transform: uppercase;
+    font-family:Roboto-Black;
+    font-size: 34px;
     margin: 0;
+    margin-bottom: 20px;
 }
 h3{
     font-family:Roboto-Bold;
@@ -90,26 +89,28 @@ h4{
     color: #ffffff !important;
     background-color: #e36e11;
 }
-.btn-orange{
-    font-family:Roboto-Bold;
-    background-color: #e36e11;
+.btn-green{
+    font-family: Roboto-Medium;
     width: 200px;
     height: 45px;
-    color: #1e1e1e;
     font-size: 18px;
-    box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.3);
-    border:0;
-    font-size: 16px !important;
+    border: 5px double #8d6b46;
+    color: #343434;
+    background-color: #fff;
 }
-.btn-orange:hover{
-    font-family: Roboto-Bold;
-    font-weight: bold;
-    color: #ffffff !important;
+.btn-green:hover{
+    color: #66cc66 !important;
+    box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.3);
 }
-.block-title{
-    font-family: Roboto-Bold;
-    font-size: 24px;
-    padding-bottom: 20px;
+.btn-green .label {
+    font: 18px "Roboto-Medium";
+    color: #343434;
+    padding: 0;
+    vertical-align: middle;
+}
+.btn-green .glyphicon {
+    margin-right: 10px;
+    font-size: 20px;
 }
 .no-margin-row{
     margin: 0;
@@ -131,12 +132,10 @@ h4{
 }
 a:active,
 a:focus {
-    outline: none !important; }
+    outline: none !important;
+    text-decoration: none;}
 a:hover {
     text-decoration: none;
-    color: #ffffff;
-}
-a{
     color: #ffffff;
 }
 td {
@@ -163,11 +162,37 @@ ul.breadcrumb {
     background: #8d6b46 url("/images/zenbg.png");
     color: #fff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.35);
+}
+.breadcrumb li a:hover {
+    text-decoration: none;
+    color: #66cc66;
+}
+.breadcrumb li a {
+    color: #ffffff;
 }
 .breadcrumb > .active {
     color: #66cc66;
 }
+#make-order {
+    margin-top: 20px;
+    background: none;
+    border: 0;
+    color: inherit;
+    /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-appearance: button; /* for input */
+    -webkit-user-select: none; /* for button */
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
 
+.header a{
+    color: #ffffff;
+}
 .header .top-navigation {
     background-color: rgba(255, 255, 255, 1) !important;
     margin-bottom: 0 !important;
@@ -180,6 +205,9 @@ ul.breadcrumb {
     border-right: 1px solid #959595;
     padding: 0 15px;
     margin: 15px 0;
+}
+.header .main-menu:hover a.main-menu {
+    color: #66cc66;
 }
 .header .logo {
     margin-top: 15px;
@@ -273,6 +301,10 @@ ul.breadcrumb {
 .middle-navigation .navbar-nav > li > a {
     padding: 10px 20px;
     text-transform: uppercase;
+    border-right: 1px solid white;
+}
+.middle-navigation .navbar-nav > li:last-child > a {
+    border-right: none;
 }
 .middle-navigation .navbar-nav > li:hover,
 .middle-navigation .navbar-nav > li.active{
@@ -287,7 +319,7 @@ ul.breadcrumb {
 }
 
 .slider-wrapper {
-    background: url('../images/slide-1.jpg') no-repeat center center;
+    background: url('../images/slide-2.jpg') no-repeat center center;
     background-size: cover;
     height:400px;
     display: block;
@@ -339,6 +371,9 @@ ul.breadcrumb {
     text-align: center;
 }
 
+.sidebar a {
+    color: #ffffff;
+}
 .sidebar {
     display: table;
     width: 100%;
@@ -349,12 +384,12 @@ ul.breadcrumb {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.35);
 }
 .sidebar .block-title {
-    font-size: 24px;
+    font: 24px "Roboto-Medium";
     padding: 0;
-    color: #fff;
-
+    color: #ffffff;
 }
 .sidebar .block-hr {
     margin: 0;
@@ -421,7 +456,6 @@ ul.breadcrumb {
 .sub-sidebar-menu .sub-sidebar-menu-item:hover > a {
     color: #66cc66;
 }
-
 .sub-sidebar-menu .sub-sidebar-menu-item .st_menu_open {
     top: 50%;
     right: 0;
@@ -434,6 +468,11 @@ ul.breadcrumb {
     background: #8d6b46 url("/images/zenbg.png");
     color: #fff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 -4px 10px 0 rgba(0, 0, 0, 0.35);
+}
+#footer a {
+    color: #ffffff;
+
 }
 #footer .footer-menu{
     font-family:Roboto-Bold;
@@ -445,6 +484,11 @@ ul.breadcrumb {
 #footer .footer-menu a{
     display: block;
     padding: 2px 0 2px 0;
+    color: #ffffff;
+}
+#footer .footer-menu a:hover {
+    text-decoration: none;
+    color: #66cc66;
 }
 #footer .contact{
     font-family:Roboto-Bold;
@@ -576,6 +620,10 @@ ul.breadcrumb {
     padding: 10px;
 }
 
+.page-sidebar a {
+    color: #333333;
+}
+
 .about{
 
 }
@@ -703,7 +751,7 @@ ul.breadcrumb {
 .catalog-page .img-href img{
     margin: 0 auto;
     position: absolute;
-    bottom: 5%;
+    bottom: 10%;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
@@ -721,7 +769,7 @@ ul.breadcrumb {
     display: block;
 }
 .catalog-page .item{
-    margin: 10px;
+    margin-bottom: 10px;
     height:210px;
     border-radius: 5px;
     -moz-border-radius: 5px;
@@ -799,6 +847,21 @@ ul.breadcrumb {
 .gallery .gallery-img{
     height:180px;
     width: 100%;
+}
+
+.service h4 {
+    font: bold 20px "Roboto-Bold";
+    text-transform: none;
+    text-decoration: underline;
+}
+
+.service h4:hover {
+    color: #66cc66;
+    cursor: pointer;
+}
+
+.service .text {
+
 }
 
 .content-wrapper .excel{
@@ -1045,3 +1108,15 @@ ul.breadcrumb {
     border-radius: 10px;
 }
 /* Выпадашка в header End*/
+
+.modal-header {
+    text-align: center;
+}
+
+.modal-header .modal-title {
+    font: 24px "Roboto-Medium";
+}
+
+.modal-body p{
+    font-size: 16px;
+}

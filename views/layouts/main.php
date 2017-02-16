@@ -24,8 +24,8 @@ $bodyClass = ArrayHelper::getValue($this, 'params.bodyClass');
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="Content-Type" content="text/html;">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="yandex-verification" content="66464df1296ac381" />
     <?= Html::csrfMetaTags() ?>
-    <link rel="icon" href="http://www.yoursite.com/favicon.ico?v=2" />
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>

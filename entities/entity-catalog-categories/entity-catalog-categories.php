@@ -55,8 +55,21 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => strip_tags($model['ro
                 <?php endforeach; ?>
                 <?php } else { ?>
                     <?= $this->render('product-card', ['model' => $model]); ?>
-                    <div class="block-text">
-                        <?= $model['page']['text'] ?>
+                    <?php if (isset($model['page']['price'])): ?>
+                        <div class="col-md-4 col-sm-12">
+                            <div>
+                                <span class="btn btn-green"><span class="glyphicon glyphicon-ruble"></span><span class="align-top">Цена: <?= $model['page']['price'] ?> руб.</span></span>
+                            </div>
+                            <button type="button" id="make-order" data-toggle="modal" data-target="#orderModal" data-name="<?=$model['route']['title']?>" data-price="<?= $model['page']['price'] ?>">
+                                <span class="btn btn-green"><span class="glyphicon glyphicon-shopping-cart"></span>Заказать</span>
+                            </button>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                    <div class="col-md-12">
+                        <div class="block-text">
+                            <?= $model['page']['text'] ?>
+                        </div>
                     </div>
                 <?php } ?>
             </div>

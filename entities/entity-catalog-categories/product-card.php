@@ -2,6 +2,8 @@
 use app\widgets\popup\MagnificPopup;
 
 ?>
+<div class="row">
+<div class="col-md-8 col-sm-12">
 <div class="block-image pull-left">
     <?php
     /** @var \app\models\EntityCatalogCategories $model */
@@ -28,4 +30,5 @@ use app\widgets\popup\MagnificPopup;
         <img src="/uploads/no-image.jpg" class="product-image img-responsive"/>
     <?php } ?>
 
+</div>
 </div>

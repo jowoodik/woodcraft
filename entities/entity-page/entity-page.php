@@ -31,14 +31,13 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => strip_tags($model['ro
     <? endif; ?>
     <div class="col-md-9 col-xs-12">
         <div class="page-sidebar">
-            <div class="block-title"><a
-                    href="<?= $model['route']['path'] ?>"><?= $model['route']['title'] ?></a></div>
+            <div class="block-title"><h1><a href="<?= $model['route']['path'] ?>"><?= $model['route']['title'] ?></a></h1></div>
             <div class="block-text">
                 <?= $model['page']['text'] ?>
             </div>
-            <?php if ($model['route']['alias'] === 'kontakty'): ?>
+            <?php if ($model['route']['alias'] === 'contact'): ?>
                 <div class="map">
-                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=wNc-TKY3x1g7m1ZAvR5Xe9g3rnDrlpAj&amp;width=100%25&amp;height=450&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
+                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=QyDutph03HIYZJt1IieyYVMeEAKQ0Bqt&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
                 </div>
             <?php endif; ?>
         </div>

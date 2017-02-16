@@ -114,13 +114,13 @@ class ServicesController extends Controller
                 $file->saveAs($dir . '/' . $string . '.jpg');
             }
             if ($model->save()) {
-                return $this->redirect(['update', 'id' => $model->id]);
+                return $this->goBack();
             } else {
                 //чтобы видеть ошибку:
                 Yii::warning($model->errors);
             }
         }
-        $this->view->params['breadcrumbs'][] = $this->view->title = 'Добавить услугу';
+        $this->view->params['breadcrumbs'][] = $this->view->title = 'Добавить каталог услугу';
 
         return $this->render('create', [
             'model' => $model,
@@ -173,7 +173,7 @@ class ServicesController extends Controller
                 Yii::warning($model->errors);
             }
         }
-        $this->view->params['breadcrumbs'][] = $this->view->title = 'Редактировать новость';
+        $this->view->params['breadcrumbs'][] = $this->view->title = 'Редактировать каталог услуг';
 
         return $this->render('update', [
             'model' => $model,

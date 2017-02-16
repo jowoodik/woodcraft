@@ -19,7 +19,7 @@ class User extends Object implements IdentityInterface
         '1' => [
             'id' => '1',
             'username' => 'woodcraft',
-            'password' => 'woodcraft',
+            'password' => '6eOqXpA6',
             'authKey' => 'test100key',
             'accessToken' => '100-token',
             'is_admin' => 1,

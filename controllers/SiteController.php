@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 
+use app\models\Applications;
 use app\models\forms\LoginForm;
 use /** @noinspection PhpMethodOrClassCallIsNotCaseSensitiveInspection */
     Yii;
@@ -77,6 +78,21 @@ class SiteController extends Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
+
+        return $this->goHome();
+    }
+
+    public function actionSendEmail()
+    {
+        $application = new Applications();
+        $req = Yii::$app->request;
+
+        if ($application->load($req->post())) {
+
+            if ($application->save() && $application->contact()) {
+                Yii::$app->session->setFlash('contactFormSubmitted');
+            }
+        }
 
         return $this->goHome();
     }

@@ -13,8 +13,9 @@ use Yii;
  * @property string $image
  * @property integer $created_at
  * @property integer $updated_at
- * @property integer $is_show
- * @property integer $is_sidebar
+ * @property boolean $is_show
+ * @property boolean $is_sidebar
+ * @property string $price
  *
  * @property Route $route
  */
@@ -34,9 +35,10 @@ class BaseEntityCatalogCategories extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['route_id', 'created_at', 'updated_at', 'is_show', 'is_sidebar'], 'integer'],
+            [['route_id', 'created_at', 'updated_at'], 'integer'],
             [['text'], 'string'],
-            [['image'], 'string', 'max' => 255],
+            [['is_show', 'is_sidebar'], 'boolean'],
+            [['image', 'price'], 'string', 'max' => 255],
             [['route_id'], 'exist', 'skipOnError' => true, 'targetClass' => Route::className(), 'targetAttribute' => ['route_id' => 'id']],
         ];
     }
@@ -55,6 +57,7 @@ class BaseEntityCatalogCategories extends \yii\db\ActiveRecord
             'updated_at' => 'Updated At',
             'is_show' => 'Is Show',
             'is_sidebar' => 'Is Sidebar',
+            'price' => 'Price',
         ];
     }
 

@@ -81,21 +81,18 @@ foreach ($menus as $menu) {
                                 </div>
                             </li>
                             <li class="menu-main text-uppercase">
-                                <a href="/#about" class="button menu main-menu"> О нас
-                                </a>
+                                <a href="/about" class="button menu main-menu">О нас</a>
                             </li>
                             <li class="menu-main text-uppercase">
-                                <a href="/#useful" class="button menu main-menu"> Контакты
-                                </a>
+                                <a href="/contact" class="button menu main-menu"> Контакты</a>
                             </li>
-
                             <li>
                                 <div class="top-header-info">
                                     <div class="all-hover">
                                         <div class="cont-pad">
                                             <div class="city">Екатеринбург</div>
-                                            <div class="tel">+7 (343) 204-94-64</div>
-                                            <span class="date">Время работы: пн-пт 09:00-18:00</span>
+                                            <div class="tel">+7-922-611-13-01</div>
+                                            <span class="date">Время работы: Пн-Сб 08:00-21:00</span>
                                         </div>
                                         <div class="hover-info-block">
                                             <div class="zvonok">
@@ -103,11 +100,11 @@ foreach ($menus as $menu) {
                                             </div>
                                             <div class="home">
                                                 <span>Офис</span><br>
-                                                <a href="javascript:void(0)" data-pjax-yandex-map="">ул. Уральская, 3</a>
+                                                <a href="/contact" data-pjax-yandex-map="">ул. Горнистов 10 А</a>
                                             </div>
                                             <div class="mail">
                                                 <span> E-mail</span><br>
-                                                <a href="javascript:void(0)" data-pjax-yandex-map-two="">woodcraft@yandex.ru</a>
+                                                <a href="#" data-pjax-yandex-map-two="">woodcraft-ural@yandex.ru</a>
                                             </div>
                                         </div>
                                     </div>

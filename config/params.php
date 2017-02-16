@@ -27,7 +27,7 @@ function d($array)
 
 return [
     'adminName'          => 'woodcraft',
-    'adminEmail'         => 'jeffrey199318@yandex.ru',
+    'adminEmail'         => 'yuferev1993@yandex.ru',
     'adminEmailPassword' => 'YyB9Y9yEL',
-    'siteName'           => 'zsmrus.ru',
+    'siteName'           => 'woodcraft-ural.ru',
 ];
