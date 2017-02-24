@@ -39,7 +39,7 @@ $routes = Route::find()
                 </a>
                 <a href="<?= $route['path'] ?>" class="img-href">
                     <div class="img-wrapper">
-                        <img src="/<?= $route['image'] . '.jpg' ?>" class="img-responsive"/>
+                        <img src="/<?= $route['image'] . '.jpg' ?>" class="img-responsive img-thumbnail"/>
                     </div>
                 </a>
             <?php } else { ?>

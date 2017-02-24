@@ -1,2 +1,8 @@
+User-agent: Yandex
+Host: woodcraft-ural.ru
+
 User-agent: *
-Disallow: /
+Disallow: /admin
+Disallow: /login
+
+Sitemap: http://woodcraft-ural.ru/sitemap.xml

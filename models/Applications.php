@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use Swift_Plugins_LoggerPlugin;
+use Swift_Plugins_Loggers_ArrayLogger;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\bootstrap\Html;
@@ -77,16 +79,21 @@ class Applications extends BaseApplications
 HTML;
 
         $adminEmail = ArrayHelper::getValue(Yii::$app->params, 'adminEmail');
+        $woodcraftEmail = ArrayHelper::getValue(Yii::$app->params, 'woodcraftEmail');
         $adminName = ArrayHelper::getValue(Yii::$app->params, 'adminName');
         $siteName = ArrayHelper::getValue(Yii::$app->params, 'siteName');
-
-        Yii::$app->mailer->compose()
-            ->setTo($adminEmail)
+        $mailer = Yii::$app->get('mailer');
+        $message = Yii::$app->mailer->compose()
+            ->setTo($woodcraftEmail)
             ->setFrom([$adminEmail => $adminName])
             ->setSubject('Заявка с сайта ' . $siteName)
-            ->setHtmlBody(Html::decode($body))
-            ->send();
+            ->setHtmlBody(Html::decode($body));
 
+        $logger = new Swift_Plugins_Loggers_ArrayLogger();
+        $mailer->getSwiftMailer()->registerPlugin(new Swift_Plugins_LoggerPlugin($logger));
+        if (!$message->send()) {
+            echo $logger->dump();
+        }
         unset($_POST);
         unset($_SESSION);
         return true;

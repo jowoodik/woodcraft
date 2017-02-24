@@ -123,5 +123,6 @@ table.question {
 }
 
 .img-small{
-    width: 400px;
+    max-width: 400px;
+    max-height: 245px;
 }

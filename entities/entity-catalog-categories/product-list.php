@@ -12,15 +12,11 @@
             <?= $route['title'] ?>
         </a>
         <a href="<?= $route['path'] ?>" class="img-href">
-            <div class="img-wrapper">
-                <img src="/<?= $route['image'] . '.jpg' ?>" class="img-responsive"/>
-            </div>
+                <img src="/<?= $route['image'] . '.jpg' ?>" class="img-responsive img-thumbnail"/>
         </a>
     <?php } else { ?>
         <a href="<?= $route['path'] ?>" class="img-href">
-            <div class="img-wrapper">
-                <img src="/uploads/no-image.jpg" class="my-thumb"/>
-            </div>
+                <img src="/uploads/no-image.jpg" class="img-responsive"/>
         </a>
     <?php } ?>
 </div>

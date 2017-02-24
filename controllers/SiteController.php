@@ -94,6 +94,6 @@ class SiteController extends Controller
             }
         }
 
-        return $this->goHome();
+        return $this->redirect('/katalog',302);
     }
 }

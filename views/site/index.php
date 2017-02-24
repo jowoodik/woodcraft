@@ -30,73 +30,59 @@ foreach (ArrayHelper::getValue($settingsArr, 'meta_keywords', []) as $info_block
 }
 
 ?>
-
 <div class="container">
     <div class="row">
         <?php echo SideBar::widget([]); ?>
         <div class="col-md-9 col-xs-12 content-wrapper">
-            <div class="about">
-                <?php foreach (ArrayHelper::getValue($settingsArr, 'about_title', []) as $info_block) { ?>
-                    <div id='about' class="title-page text-uppercase"><?= strip_tags($info_block['info_text']) ?></div>
-                <?php } ?>
-                <?php foreach (ArrayHelper::getValue($settingsArr, 'text_1', []) as $info_block) { ?>
-                    <div class="text"><?= strip_tags($info_block['info_text']) ?></div>
-                <?php } ?>
-                <?php foreach (ArrayHelper::getValue($settingsArr, 'sign-1', []) as $info_block) { ?>
-                    <div class="sign"><?= strip_tags($info_block['info_text']) ?></div>
-                <?php } ?>
-                <?php foreach (ArrayHelper::getValue($settingsArr, 'text_2', []) as $info_block) { ?>
-                    <div class="text"><?= strip_tags($info_block['info_text']) ?></div>
-                <?php } ?>
-                <?php foreach (ArrayHelper::getValue($settingsArr, 'sign-2', []) as $info_block) { ?>
-                    <div class="sign"><?= strip_tags($info_block['info_text']) ?></div>
-                <?php } ?>
-                <?php foreach (ArrayHelper::getValue($settingsArr, 'text_3', []) as $info_block) { ?>
-                    <div class="text"><?= strip_tags($info_block['info_text']) ?></div>
-                <?php } ?>
-                <?php foreach (ArrayHelper::getValue($settingsArr, 'sign-3', []) as $info_block) { ?>
-                    <div class="sign"><?= strip_tags($info_block['info_text']) ?></div>
-                <?php } ?>
-                <?php foreach (ArrayHelper::getValue($settingsArr, 'text_4', []) as $info_block) { ?>
-                    <div class="text"><?= strip_tags($info_block['info_text']) ?></div>
-                <?php } ?>
-                <?php foreach (ArrayHelper::getValue($settingsArr, 'red-sign', []) as $info_block) { ?>
-                    <div class="red-title"><?= strip_tags($info_block['info_text']) ?></div>
-                <?php } ?>
-            </div>
-            <div class="advantages">
-                <div class="image-section">
-                    <?php foreach (ArrayHelper::getValue($settingsArr, 'main_page_image', []) as $info_block) { ?>
-                        <img src="<?= $info_block['image'].'.jpg' ?>" class="img-responsive pull-right main-page-image" alt="">
-                    <?php } ?>
-                    <?php foreach (ArrayHelper::getValue($settingsArr, 'advantages_title', []) as $info_block) { ?>
-                        <div class="advantages-title text-uppercase"><?= strip_tags($info_block['info_text']) ?></div>
-                    <?php } ?>
-                    <?php foreach (ArrayHelper::getValue($settingsArr, 'advantages-text-1', []) as $info_block) { ?>
-                        <div class="text"><?= strip_tags($info_block['info_text']) ?></div>
-                    <?php } ?>
-                    <ul>
-                        <?php foreach (ArrayHelper::getValue($settingsArr, 'advantages-list', []) as $info_block) { ?>
-                            <li><?= strip_tags($info_block['info_text']) ?></li>
-                        <?php } ?>
-                    </ul>
+            <div class="main-page">
+            <h1>О компании</h1>
+            <div class="text">
+                Компания Вудкрафт более 10 лет предоставляет своим клиентам самое высококачественное дереворежущее
+                оборудование и инструмент. Сотрудничаем с компаниями: Техновуд, Тайга, Пилотех, Байкал, Астрон, Алтай,
+                Лесотехника.
                 </div>
-                <?php foreach (ArrayHelper::getValue($settingsArr, 'advantages-text-2', []) as $info_block) { ?>
-                    <div class="text"><?= strip_tags($info_block['info_text']) ?></div>
-                <?php } ?>
+            <div class="text">
+                Одной из основных задач компании является, проежде всего, обеспечение работоспособности оборудования
+                наших Заказщиков, поэтому особое внимание уделяем поставке запчастей, расходных материалов,инструмента к
+                поставляемому нами деревообрабатывающему оборудованию.</div>
+            <div class="text">
+                Собственное производство ленточного полотна, дисковых пил, рукавов высокого давления. Рамные и тарные
+                пилы. Деревообрабатывающее оборудование, абразивный инструмент. Доставка по регионам бесплатно: Нижний Тагил,
+                Алапаевск, Красноуфимск, Ревда, Первоуральск, Сухой Лог, Каменск Уральский, Артемовский и др. города
+                Свердловской области, а также отправка товара по России транспортной компанией: КИТ, Деловые линии и др.
+                Гарантия на нашу продукцию, сервис. </div>
+            <div class="text">
+                Низкие цены, прямые поставки с завода изготовителя, пожизненная гарантия на сварку ленточных пил,
+                высокое качество продукции, сервисный центр по ремонту и заточке ленточных пил,ремонту дисковых пил, большой
+                ассортимент продукции.
             </div>
-            <div id="useful" class="quality">
-                <?php foreach (ArrayHelper::getValue($settingsArr, 'quality_title', []) as $info_block) { ?>
-                    <div class="quality-title text-uppercase"><?= strip_tags($info_block['info_text']) ?></div>
-                <?php } ?>
-                <?php foreach (ArrayHelper::getValue($settingsArr, 'quality-subtitle', []) as $info_block) { ?>
-                    <div class="quality-subtitle"><?= strip_tags($info_block['info_text']) ?></div>
-                <?php } ?>
-                <ol class="custom-num">
-                    <?php foreach (ArrayHelper::getValue($settingsArr, 'quality-list', []) as $info_block) { ?>
-                        <li><?= strip_tags($info_block['info_text'], '<strong>') ?></li>
-                    <?php } ?>
-                </ol>
+        <h3>У компании ООО Вудкрафт выгодно покупать, потому что:</h3>
+        <ul class="list-colored">
+            <li>низкие цены</li>
+            <li>собственное производство ленточных пил</li>
+            <li>собственное производство дисковых пил</li>
+            <li>собственное производство рукавов высокого давления</li>
+            <li>высокое качество продукции</li>
+            <li>высококвалифицированные специалисты</li>
+            <li>помогаем подобрать дисковые и ленточные пилы</li>
+            <li>ценим каждого клиента</li>
+            <li>большой ассортимент продукции</li>
+            <li>поставки по всей России</li>
+        </ul>
+        <h3> Перечень оказываемых услуг: </h3>
+        <ul class="list-colored-right text-right">
+            <li>сварка и дефектовка ленточных пил</li>
+            <li>заточка и разводка ленточных пил</li>
+            <li>ремонт дисковых пил(напайка, проковка, заточка, восстановление тела зуба)</li>
+            <li>проточка колес на пилорамы</li>
+            <li>ремонт рамных и тарных пил</li>
+        </ul>
+        <h3>Каталог товаров</h3>
+        Запчасти на манипулятор(гидрораспределители,гидроцилиндры,ротаторы,РВД,фильтры,уплотнения,оси,втулки). Станки:
+        заточные и разводные станки для ленточных пил,заточные станки для дисковых пил,ленточные пилорамы,кромкообрезные
+        станки,многопильные станки,Продукция:ленточные пилы в кольцах,рукава высокого давления.Инструмент:пилы
+        дисковые,абразивный инструмент,пилы рамные и тарные. Запчасти и комплектующие к
+        станкам:ролики,подшипники,ремни,колеса на пилорамы,и другие запчасти.
             </div>
         </div>
     </div>

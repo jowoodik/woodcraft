@@ -19,16 +19,14 @@ class AppAsset extends AssetBundle
         $this->baseUrl = '@web';
 
         $this->css = [
-            'css/owl.carousel.css',
-            'css/owl.theme.css',
-            'css/owl.transitions.css',
+//            'css/owl.carousel.min.css',
+//            'css/owl.theme.default.css',
             'css/style.css',
         ];
 
         $this->js = [
             'js/bootstrap.js',
-            'js/owl.carousel.js',
-            'js/owl.carousel.min.js',
+//            'js/owl.carousel.min.js',
             'js/script.js',
         ];
 

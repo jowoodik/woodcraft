@@ -46,16 +46,15 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => strip_tags($model['ro
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
-            <div class="title">
+            <h1 class="title">
                 <?= $model['route']['title'] ?>
-            </div>
+            </h1>
                 <?php if (isset($routes) && !empty($routes)) { ?>
                 <?php foreach ($routes as $i => $route) : ?>
                 <?= $this->render('product-list', ['route' => $route]); ?>
                 <?php endforeach; ?>
                 <?php } else { ?>
                     <?= $this->render('product-card', ['model' => $model]); ?>
-                    <?php if (isset($model['page']['price'])): ?>
                         <div class="col-md-4 col-sm-12">
                             <div>
                                 <span class="btn btn-green"><span class="glyphicon glyphicon-ruble"></span><span class="align-top">Цена: <?= $model['page']['price'] ?> руб.</span></span>
@@ -65,7 +64,6 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => strip_tags($model['ro
                             </button>
                         </div>
                     </div>
-                    <?php endif; ?>
                     <div class="col-md-12">
                         <div class="block-text">
                             <?= $model['page']['text'] ?>
@@ -74,5 +72,3 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => strip_tags($model['ro
                 <?php } ?>
             </div>
         </div>
-    </div>
-</div>

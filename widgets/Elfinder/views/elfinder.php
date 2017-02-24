@@ -41,10 +41,10 @@ use app\lib\Js;
     var elf = $('#elfinder').elfinder({
         lang: 'ru',
         url: '/elfinder/connect',
-//        commands: [
-//            'info',
-//            'custom'
-//        ],
+        commands: [
+            'info',
+            'custom'
+        ],
         uiOptions: {
             // toolbar configuration
             toolbar: [

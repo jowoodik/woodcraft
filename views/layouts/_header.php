@@ -113,9 +113,7 @@ foreach ($menus as $menu) {
                             <li class="menu-main text-uppercase visible-xs">
                                 <a href="<?= Url::to('/') ?>" class="button menu main-menu ">Главная</a>
                             </li>
-                            <li class="menu-main text-uppercase visible-xs">
-                                <a href="<?= Url::to('/request') ?>" class="button menu main-menu ">Заявка</a>
-                            </li>
+
                             <?php foreach (ArrayHelper::getValue($menusArr, 'middle_menu', []) as $mItem) { ?>
                                 <li class="menu-main text-uppercase visible-xs">
                                     <a href="<?= Url::to($mItem['path']) ?>"
@@ -151,9 +149,6 @@ foreach ($menus as $menu) {
                         <ul class="nav navbar-nav middle-menu">
                             <li class="menu-middle-item">
                                 <a href="<?= Url::to('/') ?>" class="button">Главная</a>
-                            </li>
-                            <li class="menu-middle-item">
-                                <a href="<?= Url::to('/request') ?>" class="button">Заявка</a>
                             </li>
                             <?php foreach (ArrayHelper::getValue($menusArr, 'middle_menu', []) as $mItem) { ?>
                                 <li class="menu-middle-item">

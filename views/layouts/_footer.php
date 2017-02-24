@@ -44,7 +44,7 @@ foreach ($menus as $menu) {
                 <div class="logo">
 <!--                    <a href="/"><img src="/images/logo2.png" alt=""></a>-->
                 </div>
-                <div class="ooo">ООО “Woodcraft” <?=date("Y");?>г</div>
+<!--                <div class="ooo">ООО “Woodcraft” --><?//=date("Y");?><!--г</div>-->
             </div>
             <div class="col-md-5 col-sm-4 col-xs-12 text-uppercase footer-menu">
                 <a href="/#about">О Нас</a>
@@ -104,7 +104,7 @@ foreach ($menus as $menu) {
             </div>
             <div class="modal-body">
                 <p>Вы хотите заказать <span class="name"></span> стоимость <span class="price"></span></p>
-                <p>Пожалуйста, введите Ваше имя, email и номер телефона и наши менеджеры Вам перезвонят!</p>
+                <p>Пожалуйста, введите Ваше имя, email, номер телефона и наши менеджеры Вам перезвонят!</p>
                 <?= $form->field($model, 'user_name') ?>
                 <?= $form->field($model, 'user_email') ?>
                 <?= $form->field($model, 'user_telephone') ?>

@@ -20,3 +20,7 @@ div._image-render.preview-border img {
     background-image: none;
     border: 1px solid #ccc;
 }
+
+.control-label {
+    margin-top: 20px;
+}
