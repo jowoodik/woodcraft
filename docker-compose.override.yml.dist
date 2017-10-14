@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  backend:
+    environment:
+      VIRTUAL_HOST: ${BACKEND_HOST}
+    networks:
+      - default
+      - nginx-proxy
+
+  frontend:
+    environment:
+      VIRTUAL_HOST: ${FRONTEND_HOST}
+    networks:
+      - default
+      - nginx-proxy
+
+  #postgres:
+  #  ports:
+  #    - 5432:5432
+
+networks:
+  nginx-proxy:
+    external: true

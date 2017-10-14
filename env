@@ -1,0 +1,1 @@
+docker-compose exec --user=php php-fpm bash
