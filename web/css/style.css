@@ -207,7 +207,8 @@ ul.breadcrumb {
     background-color: rgba(255, 255, 255, 1) !important;
     margin-bottom: 0 !important;
     border: 0;
-    box-shadow: 0 3px 13px 0 rgba(0, 0, 0, 0.3)
+    box-shadow: 0 3px 13px 0 rgba(0, 0, 0, 0.3);
+    padding: 5px 0;
 }
 .header .main-menu {
     font-family: Roboto-Bold;
@@ -461,12 +462,12 @@ ul.breadcrumb {
 .sub-sidebar-menu .sub-sidebar-menu-item {
     position: relative;
     list-style: none;
-    padding: 8px 0;
+    padding: 8px 0 8px 20px;
     border-top: 1px dotted #ffffff;
 }
 .sub-sidebar-menu .sub-sidebar-menu-item a{
     color: #ffffff;
-    padding-left: 20px;
+    padding-left: 0;
 }
 .sub-sidebar-menu .sub-sidebar-menu-item.active > a,
 .sub-sidebar-menu .sub-sidebar-menu-item:hover > a {
