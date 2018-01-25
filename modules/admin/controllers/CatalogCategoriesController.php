@@ -87,6 +87,7 @@ class CatalogCategoriesController extends Controller
 
         if ($model->load($req->post())) {
             if (!$model->image) $model->image = $oldFile;
+            $model->price = $req->post()['EntityCatalogCategories']['price'];
             $dirName = 'uploads/catalog-categories';
 
             $route = $dirName . '/';
@@ -119,6 +120,10 @@ class CatalogCategoriesController extends Controller
                     return $this->goBack();
                 }
             } else {
+                echo '<pre>';
+                print_r ($model->price);
+                echo '</pre>';
+                exit();
                 //чтобы видеть ошибку:
                 Yii::warning($model->errors);
             }
