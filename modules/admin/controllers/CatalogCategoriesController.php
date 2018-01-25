@@ -33,6 +33,7 @@ class CatalogCategoriesController extends Controller
 
         if ($model->load($req->post())) {
             $dirName = 'uploads/catalog-categories';
+            $model->price = $req->post()['EntityCatalogCategories']['price'];
 
             $route = $dirName . '/';
             $dir = Yii::getAlias("@app/web/");
