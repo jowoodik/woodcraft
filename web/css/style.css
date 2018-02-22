@@ -222,7 +222,8 @@ ul.breadcrumb {
 }
 .header .logo {
     margin-top: 15px;
-    text-align: center;
+    max-width: 160px;
+    max-height: 35px;
 }
 .header .right-part {
     background-color: #ffea38;
