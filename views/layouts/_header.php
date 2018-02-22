@@ -58,7 +58,7 @@ foreach ($menus as $menu) {
                 <div class="row">
                     <div class="col-md-2 col-xs-12 visible-md visible-lg">
                         <div class="logo">
-                            <a href="/"><img src="/images/logo-new.png" alt=""></a>
+                            <a href="/"><img src="/images/logo-new.jpg" alt=""></a>
                         </div>
                     </div>
                     <div class="navbar-left left-part">
