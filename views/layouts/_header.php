@@ -58,7 +58,7 @@ foreach ($menus as $menu) {
                 <div class="row">
                     <div class="col-md-2 col-xs-12 visible-md visible-lg">
                         <div class="logo">
-                            <a href="/"><img src="/images/logo2.png" alt=""></a>
+                            <a href="/"><img src="/images/logo-new.png" alt=""></a>
                         </div>
                     </div>
                     <div class="navbar-left left-part">
@@ -91,7 +91,7 @@ foreach ($menus as $menu) {
                                     <div class="all-hover">
                                         <div class="cont-pad">
                                             <div class="city">Екатеринбург</div>
-                                            <div class="tel">+7-922-611-13-01</div>
+                                            <div class="tel">8 (343) 386-19-65</div>
                                             <span class="date">Время работы: Пн-Сб 08:00-21:00</span>
                                         </div>
                                         <div class="hover-info-block">
