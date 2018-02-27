@@ -222,6 +222,7 @@ ul.breadcrumb {
 }
 .header .logo {
     margin-top: 15px;
+    text-align: center;
 }
 .header .logo img {
     max-width: 160px;
