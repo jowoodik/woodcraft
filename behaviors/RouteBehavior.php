@@ -34,6 +34,7 @@ class RouteBehavior extends Behavior
     public $alias;
     public $parent_id;
     public $is_active;
+    public $h1;
     public $meta_title;
     public $meta_description;
     public $meta_keywords;
@@ -68,6 +69,7 @@ class RouteBehavior extends Behavior
             Validator::createValidator('string', $owner, [
                 'title',
                 'alias',
+                'h1',
                 'meta_title',
                 'meta_description',
                 'meta_keywords',
@@ -114,6 +116,7 @@ class RouteBehavior extends Behavior
         $route->alias = $this->alias;
         $route->parent_id = $this->parent_id;
         $route->is_active = $this->owner['is_active'];
+        $route->h1 = $this->h1;
         $route->meta_title = $this->meta_title;
         $route->meta_description = $this->meta_description;
         $route->meta_keywords = $this->meta_keywords;

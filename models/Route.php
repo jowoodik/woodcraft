@@ -20,13 +20,6 @@ class Route extends \app\modules\admin\models\Route
         ];
     }
 
-    public function rules()
-    {
-        return [
-            [['title', 'alias'], 'string', 'max' => 70],
-        ];
-    }
-
     public static function getList()
     {
         return Route::find()

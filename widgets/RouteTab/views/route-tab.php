@@ -30,7 +30,9 @@ echo $form->field($that->model, 'is_active')->checkbox();
 
 echo $form->field($that->model, 'is_sidebar')->checkbox();
 
-//echo $form->field($that->model, 'meta_title');
+echo $form->field($that->model, 'h1');
+
+echo $form->field($that->model, 'meta_title');
 
 echo $form->field($that->model, 'meta_description');
 

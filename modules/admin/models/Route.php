@@ -52,6 +52,7 @@ class Route extends BaseRoute
                 'entity',
                 'entity_id',
                 'is_active',
+                'h1',
                 'meta_title',
                 'meta_description',
                 'meta_keywords'

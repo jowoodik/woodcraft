@@ -22,6 +22,7 @@ use app\models\EntityCatalogCategories;
  * @property $pid;
  * @property $description
  * @property $is_active;
+ * @property $h1;
  * @property $meta_title;
  * @property $meta_description;
  * @property $meta_keywords;

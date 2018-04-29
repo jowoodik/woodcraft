@@ -28,7 +28,7 @@ $routes = Route::find()
     ->orderBy('entity_catalog_categories.id')
     ->all();
 
-//$this->registerMetaTag(['name' => 'title', 'content' => strip_tags($model['route']['meta_title'])]);
+$this->registerMetaTag(['name' => 'title', 'content' => strip_tags($model['route']['meta_title']) ? strip_tags($model['route']['meta_title']) : '']);
 $this->registerMetaTag(['name' => 'description', 'content' => strip_tags($model['route']['meta_description'])]);
 $this->registerMetaTag(['name' => 'keywords', 'content' => strip_tags($model['route']['meta_keywords'])]);
 
@@ -47,7 +47,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => strip_tags($model['ro
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
             <h1 class="title">
-                <?= $model['route']['title'] ?>
+                <?= $model['route']['h1'] ? $model['route']['h1'] : $model['route']['title']?>
             </h1>
                 <?php if (isset($routes) && !empty($routes)) { ?>
                 <?php foreach ($routes as $i => $route) : ?>

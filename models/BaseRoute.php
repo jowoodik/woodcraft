@@ -16,6 +16,7 @@ use Yii;
  * @property string $meta_title
  * @property string $meta_description
  * @property string $meta_keywords
+ * @property string $h1
  * @property boolean $is_active
  * @property integer $sort
  * @property integer $created_at
@@ -52,7 +53,7 @@ class BaseRoute extends \yii\db\ActiveRecord
             [['parent_id', 'entity', 'entity_id', 'sort', 'created_at', 'updated_at'], 'integer'],
             [['meta_description', 'meta_keywords'], 'string'],
             [['is_active'], 'boolean'],
-            [['title', 'alias', 'meta_title'], 'string', 'max' => 255],
+            [['title', 'alias', 'meta_title', 'h1'], 'string', 'max' => 255],
             [['parent_id'], 'exist', 'skipOnError' => true, 'targetClass' => Route::className(), 'targetAttribute' => ['parent_id' => 'id']],
         ];
     }
@@ -72,6 +73,7 @@ class BaseRoute extends \yii\db\ActiveRecord
             'meta_title' => 'Meta Title',
             'meta_description' => 'Meta Description',
             'meta_keywords' => 'Meta Keywords',
+            'h1' => 'H1',
             'is_active' => 'Is Active',
             'sort' => 'Sort',
             'created_at' => 'Created At',
